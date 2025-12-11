@@ -68,7 +68,7 @@ export default function Navbar() {
             />
           </SheetTrigger>
           <SheetContent
-            side="top"
+            side="left"
             className="flex flex-col justify-between px-2 h-screen bg-card z-[100]"
           >
             <div>
