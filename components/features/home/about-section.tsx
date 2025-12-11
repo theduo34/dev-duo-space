@@ -27,7 +27,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="section">
-      <div className="max-w-7xl mx-auto space-y-8 bg-card rounded-2xl justify-start">
+      <div className="max-w-7xl mx-auto space-y-8 bg-muted dark:bg-card rounded-2xl justify-start">
         <div className={"flex flex-col gap-2"}>
           <div className="flex items-start justify-between">
             <div className="ps-8 pt-8">
@@ -38,7 +38,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 p-1.5 rounded-bl-2xl bg-muted border rounded-tr-2xl">
+            <div className="flex items-center gap-2 p-1.5 rounded-bl-2xl dark:bg-muted bg-primary/20 border rounded-tr-2xl">
               {aboutTabs.map((tab) => {
                 const active = activeTab === tab.label;
                 return (
