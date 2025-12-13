@@ -49,7 +49,7 @@ const routeList: RouteProps[] = [
  const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-inner bg-opacity-15 w-full top-0 mx-auto sticky  bg-muted dark:bg-card px-4 py-4 md:px-8 z-40 flex justify-between items-center  bg-card">
+    <header className="shadow-inner bg-opacity-15 w-full top-0 mx-auto sticky  bg-muted dark:bg-card px-4 py-4 md:px-8 z-40 flex justify-between items-center bg-card">
       <Logo/>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
@@ -63,7 +63,7 @@ const routeList: RouteProps[] = [
 
           <SheetContent
             side="top"
-            className="flex flex-col h-full justify-between rounded-tr-2xl rounded-br-2xl px-4 bg-card"
+            className="flex flex-col h-full justify-between px-4 bg-card"
           >
             <div>
               <SheetHeader className="mb-4">
@@ -90,7 +90,7 @@ const routeList: RouteProps[] = [
               </div>
             </div>
 
-            <SheetFooter className="flex-col sm:flex-col justify-start items-start">
+            <SheetFooter className="flex-col sm:flex-col justify-start items-start p-0 py-2">
               <Separator className="mb-2"/>
               <QuickInfo/>
             </SheetFooter>
