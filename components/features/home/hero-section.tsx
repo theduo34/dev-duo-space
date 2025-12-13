@@ -14,7 +14,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="section flex flex-col items-center relative overflow-hidden gap-16 pt-2 md:pt-32">
+    <section id="hero" className="section flex flex-col items-center relative overflow-hidden gap-16 pt-16 md:pt-32">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"/>
         <div
