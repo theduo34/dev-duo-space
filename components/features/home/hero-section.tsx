@@ -14,23 +14,23 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="section flex flex-col items-center relative overflow-hidden gap-16">
+    <section id="hero" className="section flex flex-col items-center relative overflow-hidden gap-16 pt-2 md:pt-32">
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"/>
         <div
           className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-1000"/>
       </div>
 
-      <div
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm font-medium backdrop-blur-sm border border-border">
-            <span className="relative flex h-2 w-2">
-              <span
-                className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary">
-              </span>
-            </span>
-        Available for opportunities
-      </div>
+      {/*<div*/}
+      {/*  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/50 text-secondary-foreground text-sm font-medium backdrop-blur-sm border border-border">*/}
+      {/*      <span className="relative flex h-2 w-2">*/}
+      {/*        <span*/}
+      {/*          className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>*/}
+      {/*        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary">*/}
+      {/*        </span>*/}
+      {/*      </span>*/}
+      {/*  Available for opportunities*/}
+      {/*</div>*/}
 
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-stretch">
         {/* Left Side - Text Content */}
@@ -52,7 +52,7 @@ export default function HeroSection() {
               </span> and with experience in a variety of technologies and frameworks.
           </p>
 
-          <div className="flex gap-4 pt-4">
+          <div className="flex items-center justify-center md:justify-start gap-4 pt-4">
             <CtaButton
               label={"Download Resume"}
               icon
