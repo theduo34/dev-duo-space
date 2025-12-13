@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Duo Space",
+  title: "</>EMMSOM",
   description: "The official portfolio of Dev Duo, projects, expertise, and engineering craft",
 };
 
