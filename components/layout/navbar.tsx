@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronsDown, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import React from "react";
 import {
   Sheet,
@@ -19,7 +19,6 @@ import {
 } from "../ui/navigation-menu";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import {ToggleTheme} from "@/components/layout/toggle-theme";
 import {Logo} from "@/components/layout/logo";
 import QuickInfo from "@/components/shared/quick-info";
 
@@ -45,15 +44,12 @@ const routeList: RouteProps[] = [
     href: "#contact",
     label: "Contact",
   },
-
 ];
-
 
  const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header
-      className="shadow-inner bg-opacity-15 w-full top-0 mx-auto sticky border bg-muted dark:bg-card p-4 z-40  flex justify-between items-center  bg-card">
+    <header className="shadow-inner bg-opacity-15 w-full top-0 mx-auto sticky border bg-muted dark:bg-card px-4 py-4 md:px-8 z-40 flex justify-between items-center  bg-card">
       <Logo/>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
@@ -66,8 +62,8 @@ const routeList: RouteProps[] = [
           </SheetTrigger>
 
           <SheetContent
-            side="left"
-            className="flex flex-col justify-between rounded-tr-2xl rounded-br-2xl px-4 bg-card border-secondary"
+            side="top"
+            className="flex flex-col h-full justify-between rounded-tr-2xl rounded-br-2xl px-4 bg-card"
           >
             <div>
               <SheetHeader className="mb-4">
@@ -96,8 +92,7 @@ const routeList: RouteProps[] = [
 
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2"/>
-
-              <ToggleTheme/>
+              <QuickInfo/>
             </SheetFooter>
           </SheetContent>
         </Sheet>
