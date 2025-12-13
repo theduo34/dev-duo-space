@@ -1,7 +1,6 @@
 import Navbar from "@/components/layout/navbar";
 import ProjectSection from "@/components/features/home/project-section";
 import AboutSection from "@/components/features/home/about-section";
-import SkillsSection from "@/components/features/home/skills-section";
 import ContactSection from "@/components/features/home/contact-section";
 import ExperienceSection from "@/components/features/home/experience";
 import Footer from "@/components/layout/footer";

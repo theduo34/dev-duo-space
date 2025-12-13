@@ -7,13 +7,28 @@ import {Button} from "@/components/ui/button";
 import {Github} from "lucide-react";
 
 export default function QuickInfo() {
+  const handleViewResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/1xEc6Ipf-c3DwG7ZxRo__9IJZVavPGOZ-/view",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+
   return (
     <div className="w-full flex flex-row items-center justify-between md:justify-center gap-4">
       <Button
         variant="outline"
         className={"items-center p-2 w-10 h-10 border rounded-full"}
       >
-        <Github/>
+        <a
+          href="https://github.com/theduo34"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Github/>
+        </a>
       </Button>
 
       <div className="order-2 md:order-1">
@@ -21,7 +36,11 @@ export default function QuickInfo() {
       </div>
 
       <div className={"order-1 md:order-2"}>
-        <MyButton label={"Visit resume"}/>
+      <MyButton
+        label={"Visit resume"}
+        onClick={handleViewResume}
+      >
+      </MyButton>
       </div>
     </div>
   )
