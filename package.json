@@ -10,6 +10,7 @@
     "add-component": "bunx --bun shadcn@latest add"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-separator": "^1.1.8",

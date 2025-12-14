@@ -40,7 +40,7 @@ export default function Education() {
       {educationData.map((edu) => (
         <div
           key={`${edu.degree}${edu.institution}`}
-          className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:shadow-lg transition-all duration-300"
+          className="bg-card border border-border rounded-card p-4 md:p-8 hover:shadow-lg transition-all duration-300"
         >
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
             <div className="space-y-2">
@@ -49,10 +49,10 @@ export default function Education() {
                   <GraduationCap className="w-5 h-5 text-primary"/>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">
+                  <h3 className="text-lg md:text-xl font-bold">
                     {edu.institution}
                   </h3>
-                  <p className="text-lg text-primary font-semibold">
+                  <p className="text-md md:text-lg text-primary font-semibold">
                     {edu.degree}
                   </p>
                 </div>
