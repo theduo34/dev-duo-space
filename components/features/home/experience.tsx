@@ -1,6 +1,7 @@
 "use client";
 
 import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
+import StackCard from "@/components/shared/cards/stack-card";
 
 interface Experience {
   id: number;
@@ -161,12 +162,7 @@ export default function ExperienceSection() {
                   <div className="pt-4 border-t border-border">
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 text-xs rounded-md bg-muted text-muted-foreground font-medium hover:bg-muted/80 transition-colors"
-                        >
-                          {tech}
-                        </span>
+                       <StackCard key={tech} tech={tech}/>
                       ))}
                     </div>
                   </div>

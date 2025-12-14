@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ExternalLink, Github } from "lucide-react";
+import StackCard from "@/components/shared/cards/stack-card";
 
 export interface Project {
   id: number;
@@ -23,11 +24,11 @@ export default function ProjectCard({ project }: { project: Project }) {
         project.imagePosition === "right"
           ? "lg:flex-row-reverse"
           : "lg:flex-row"
-      } gap-4 md:gap-8 items-center border md:border-none rounded-tl-2xl rounded-br-2xl md:rounded-none`}
+      } gap-4 md:gap-8 items-center border md:border-none rounded-card md:rounded-none`}
     >
       {/* Image */}
       <div className="w-full lg:w-1/2">
-        <div className="relative group overflow-hidden rounded-tl-2xl md:rounded-lg border border-border hover:border-primary/50 transition-all duration-300 ">
+        <div className="relative group overflow-hidden rounded-tr-2xl md:rounded-lg border border-border hover:border-primary/50 transition-all duration-300 ">
           <Image
             src={project.image}
             alt={project.title}
@@ -51,7 +52,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.title}
         </h3>
 
-        <div className="bg-card p-4 md:p-6 rounded-lg border border-border shadow-md">
+        <div className="bg-card p-4 md:p-6 border border-border shadow-md rounded-card">
           <p className="text-muted-foreground leading-relaxed">
             {project.description}
           </p>
@@ -60,12 +61,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-3">
           {project.techStack.map((tech) => (
-            <span
-              key={tech}
-              className="px-2 py-1 text-sm rounded-md bg-secondary text-secondary-foreground font-medium"
-            >
-              {tech}
-            </span>
+            <StackCard key={tech} tech={tech}/>
           ))}
         </div>
 

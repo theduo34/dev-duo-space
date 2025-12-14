@@ -66,7 +66,7 @@ export default function HeroSection() {
         <div className="relative flex justify-center lg:justify-end">
           <div className="relative w-full h-full">
             <div
-              className="relative overflow-hidden rounded-3xl border-4 border-primary/20 shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10 h-full">
+              className="relative overflow-hidden rounded-card border-4 border-primary/20 shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/10 h-full">
               <div className="h-full bg-gradient-to-br from-card to-muted flex items-center justify-center">
                 <div className="text-center space-y-4 p-8">
                   <div

@@ -206,6 +206,10 @@
   .section-header {
     @apply text-3xl md:text-5xl font-bold;
   }
+
+  .rounded-card {
+    @apply rounded-bl-2xl rounded-tr-2xl;
+  }
 }
 
 /* View Transition API for Theme Switch */
