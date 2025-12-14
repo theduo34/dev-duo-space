@@ -71,10 +71,10 @@ export default function Education() {
             </div>
           </div>
 
-          <div className="space-y-2 pt-4 border-t border-border">
+          <div className="space-y-2">
             {edu.highlights.map((highlight, idx) => (
               <div key={idx} className="flex gap-2">
-                <span className="text-primary mt-1.5">▸</span>
+                <span className="text-primary">▸</span>
                 <p className="text-sm leading-relaxed flex-1">
                   {highlight}
                 </p>
