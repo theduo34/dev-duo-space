@@ -65,10 +65,10 @@ export default function AboutMe() {
           </p>
         </div>
 
-        <div className="relative space-y-4">
+        <div className="relative space-y-2 md:space-y-4">
           <Marquee pauseOnHover className="[--duration:20s]">
             {firstRow.map((skill) => (
-              <div key={skill.name} className="mx-6">
+              <div key={skill.name} className="mx-2 md:mx-6">
                 <Icon
                   icon={skill.icon}
                   width={48}
@@ -80,7 +80,7 @@ export default function AboutMe() {
 
           <Marquee reverse pauseOnHover className="[--duration:20s]">
             {secondRow.map((skill) => (
-              <div key={skill.name} className="mx-6">
+              <div key={skill.name} className="mx-2 md:mx-6">
                 <Icon
                   icon={skill.icon}
                   width={40}
@@ -90,17 +90,6 @@ export default function AboutMe() {
             ))}
           </Marquee>
 
-          {/*<Marquee reverse pauseOnHover className="[--duration:20s]">*/}
-          {/*  {thirdRow.map((skill) => (*/}
-          {/*    <div key={skill.name} className="mx-6">*/}
-          {/*      <Icon*/}
-          {/*        icon={skill.icon}*/}
-          {/*        width={40}*/}
-          {/*        height={40}*/}
-          {/*      />*/}
-          {/*    </div>*/}
-          {/*  ))}*/}
-          {/*</Marquee>*/}
         </div>
       </div>
     </div>

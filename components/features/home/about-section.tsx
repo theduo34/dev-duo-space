@@ -26,7 +26,7 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="section">
-      <div className="max-w-7xl mx-auto space-y-8 bg-muted dark:bg-card rounded-lg justify-start">
+      <div className="max-w-7xl mx-auto space-y-8 bg-muted dark:bg-card rounded-card justify-start">
         <div className={"flex flex-col gap-2"}>
           <div className="flex items-start justify-between">
             <div className="ps-4 md:ps-8 pt-4 md:pt-8">
