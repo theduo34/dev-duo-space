@@ -5,16 +5,16 @@ import {MyButton} from "@/components/shared/my-button";
 import {ToggleTheme} from "@/components/layout/toggle-theme";
 import {Button} from "@/components/ui/button";
 import {Github} from "lucide-react";
+import {RESUME_URL} from "@/lib/costants";
 
 export default function QuickInfo() {
   const handleViewResume = () => {
     window.open(
-      "https://drive.google.com/file/d/1xEc6Ipf-c3DwG7ZxRo__9IJZVavPGOZ-/view",
+      `${RESUME_URL}/view`,
       "_blank",
       "noopener,noreferrer"
     );
   };
-
 
   return (
     <div className="w-full flex flex-row items-center justify-between md:justify-center gap-4">

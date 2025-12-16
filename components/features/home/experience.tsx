@@ -1,7 +1,10 @@
 "use client";
 
-import { Briefcase, Calendar, MapPin, ExternalLink } from "lucide-react";
+import {Briefcase, Calendar, MapPin, ExternalLink, Download} from "lucide-react";
 import StackCard from "@/components/shared/cards/stack-card";
+import Link from "next/link";
+import CtaButton from "@/components/shared/cta-button";
+import {RESUME_URL} from "@/lib/costants";
 
 interface Experience {
   id: number;
@@ -66,7 +69,17 @@ const experiences: Experience[] = [
 ];
 
 export default function ExperienceSection() {
-  return (
+
+    const handleResumeDownload = () => {
+      const link = document.createElement("a");
+      link.href = RESUME_URL;
+      link.download = "Emmanuel_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
+    return (
     <section id="experience" className="section">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Section Header */}
@@ -79,12 +92,10 @@ export default function ExperienceSection() {
 
         {/* Experience Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
           <div className="hidden md:block absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent" />
 
-          {/* Experience Cards */}
           <div className="space-y-8">
-            {experiences.map((exp, index) => (
+            {experiences.map((exp) => (
               <div
                 key={exp.id}
                 className="relative group"
@@ -97,9 +108,8 @@ export default function ExperienceSection() {
                   </div>
                 </div>
 
-                {/* Content Card */}
-                <div className="md:ml-20 bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
-                  {/* Header */}
+                {/* Card */}
+                <div className="md:ml-20 bg-card border rounded-card p-4 hover:border-primary/50 hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-4">
                     <div className="space-y-2">
                       <div className="flex items-start gap-3">
@@ -120,14 +130,14 @@ export default function ExperienceSection() {
                               {exp.company}
                             </p>
                             {exp.companyUrl && (
-                              <a
+                              <Link
                                 href={exp.companyUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-primary transition-colors"
                               >
                                 <ExternalLink className="w-4 h-4" />
-                              </a>
+                              </Link>
                             )}
                           </div>
                         </div>
@@ -174,12 +184,12 @@ export default function ExperienceSection() {
 
         {/* Bottom CTA */}
         <div className="flex justify-center pt-8">
-          <button className="relative inline-flex overflow-hidden rounded-full focus:outline-none w-fit p-[3px] group">
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-            <span className="inline-flex cursor-pointer items-center justify-center rounded-full px-6 py-2.5 font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 backdrop-blur-3xl gap-2 shadow-md transition-colors duration-300 relative z-10">
-              View Full Resume
-            </span>
-          </button>
+          <CtaButton
+            label={"Download Full Resume"}
+            icon
+            iconComponent={<Download/>}
+            onClick={handleResumeDownload}
+          />
         </div>
       </div>
     </section>

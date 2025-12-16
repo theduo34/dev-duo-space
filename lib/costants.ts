@@ -1,0 +1,1 @@
+export const RESUME_URL = "https://drive.google.com/uc?export=download&id=1xEc6Ipf-c3DwG7ZxRo__9IJZVavPGOZ-"

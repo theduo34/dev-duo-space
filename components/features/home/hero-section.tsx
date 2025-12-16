@@ -2,11 +2,12 @@
 
 import CtaButton from "@/components/shared/cta-button";
 import {Download} from "lucide-react";
+import {RESUME_URL} from "@/lib/costants";
 
 export default function HeroSection() {
   const handleResumeDownload = () => {
     const link = document.createElement("a");
-    link.href = "https://drive.google.com/uc?export=download&id=1xEc6Ipf-c3DwG7ZxRo__9IJZVavPGOZ-";
+    link.href = RESUME_URL;
     link.download = "Emmanuel_Resume.pdf";
     document.body.appendChild(link);
     link.click();
