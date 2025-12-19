@@ -3,12 +3,14 @@ import {cn} from "@/lib/utils";
 import {ArrowRight} from "lucide-react";
 
 interface Props {
-  label: string;
+  label: React.ReactNode;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   className?: string;
   icon?: boolean;
+  disabled?: boolean;
   iconComponent?: React.ReactNode;
+  children?: React.ReactNode;
 }
 export default function CtaButton (
   {
@@ -18,6 +20,8 @@ export default function CtaButton (
     className,
     icon = false,
     iconComponent = <ArrowRight/>,
+    children,
+    disabled = false,
   }: Props
 )  {
   return(
@@ -25,8 +29,15 @@ export default function CtaButton (
       className={cn(" h-11 transition-transform ease-in-out duration-300 hover:scale-105", className)}
       onClick={onClick && onClick}
       type={type}
+      disabled={disabled}
     >
-      {label} {icon && <span>{iconComponent}</span> }
+      {children ? (
+        <span>{children}</span>
+      ): (
+        <span className={"flex gap-2"}>
+          {label} {icon && <span>{iconComponent}</span> }
+        </span>
+      )}
     </Button>
   )
 }
