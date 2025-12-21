@@ -6,7 +6,12 @@ import {EMAIL_URL, GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL} from "@/lib/costants
 import Link from "next/link";
 import { toast } from "sonner"
 import CtaButton from "@/components/shared/cta-button";
-import { Spinner } from "@/components/ui/spinner"
+import dynamic from "next/dynamic";
+
+const Spinner = dynamic(
+  () => import("@/components/ui/spinner").then(mod => mod.Spinner),
+  { ssr: false }
+);
 
 interface SocialLink {
   icon: LucideIcon;

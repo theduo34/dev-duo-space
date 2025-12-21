@@ -21,8 +21,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-card border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <footer className="relative bg-muted dark:bg-card">
+      <div className="section">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <Logo/>
