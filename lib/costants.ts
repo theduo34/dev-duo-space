@@ -6,4 +6,7 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/somuah-emmanuel-66111a1
 
 export const INSTAGRAM_URL = "https://www.instagram.com/itsaquasi/"
 
-export const EMAIL_URL = "mailto:emmsom506@gmail.com"
+export const MY_MAIL = "emmsom506@gmail.com"
+
+export const EMAIL_URL = `mailto:${MY_MAIL}`
+

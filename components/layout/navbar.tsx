@@ -49,7 +49,7 @@ const routeList: RouteProps[] = [
  const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-inner bg-opacity-15 w-full top-0 mx-auto sticky  bg-muted dark:bg-card px-4 py-4 md:px-8 z-40 flex justify-between items-center bg-card">
+    <header className="shadow-inner bg-opacity-15 w-full top-0 mx-auto sticky  bg-muted dark:bg-card px-4 py-3 md:px-8 z-40 flex justify-between items-center bg-card">
       <Logo/>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
