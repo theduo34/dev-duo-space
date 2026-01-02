@@ -38,7 +38,7 @@ export default function AboutMe() {
       {/* Professional Summary */}
       <div className="space-y-4 text-left">
         <p className="leading-relaxed">
-          I’m a <span className="font-semibold">Frontend-Focused Fullstack Developer</span> specializing in building modern, high-performance web applications with
+          I’m a <span className="font-semibold">Frontend-Heavy Fullstack Developer</span> specializing in building modern, high-performance web applications with
           <span className="font-medium"> React and Next.js</span>, and cross-platform
           mobile applications using <span className="font-medium">React Native (Expo)</span>.
           I’m passionate about crafting intuitive user interfaces that are scalable,
