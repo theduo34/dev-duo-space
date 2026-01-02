@@ -208,7 +208,7 @@
   }
 
   .rounded-card {
-    @apply rounded-bl-2xl rounded-tr-2xl;
+    @apply border border-border rounded-bl-2xl rounded-tr-2xl;
   }
 }
 
