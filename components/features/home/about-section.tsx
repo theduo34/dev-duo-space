@@ -81,25 +81,25 @@ export default function AboutSection() {
     <section id="about" className="p-4 md:p-8 min-h-screen">
       <div className="flex flex-col md:flex-row w-full gap-8 min-h-screen md:h-screen">
         {/*Profile section*/}
-        <div className="w-full md:w-1/5 flex flex-col justify-start p-4 md:p-8 bg-muted dark:bg-card rounded-card">
-          <div className={"flex flex-col gap-4"}>
+        <div className="w-full md:w-1/5 flex flex-col justify-start p-4 md:p-6  bg-muted dark:bg-card rounded-card">
+          <div className={"flex flex-col gap-2"}>
             <Image
               src={PROFILE_URL}
               alt={"profile image"}
               height={200}
               width={200}
-              className="w-full object-cover h-50 w-50 rounded-card"
+              className="w-full object-cover h-40 w-40 rounded-card"
             />
             <h1 className="text-center text-xl font-bold  leading-tight">
               Emmanuel Somuah
             </h1>
-            <p className={"text-center font-light text-sm text-sm"}>
+            <p className={"text-center font-mono text-xs"}>
               Frontend-Heavy Fullstack Developer
             </p>
           </div>
           <Separator className={"my-4"}/>
 
-          <div className={"flex flex-col gap-4 md:gap-8"}>
+          <div className={"flex flex-col gap-2 md:gap-6"}>
             {addresses.map((address) => {
               const IconComponent = address.icon;
               return (
@@ -141,7 +141,7 @@ export default function AboutSection() {
         <div className="w-full md:w-4/5 mx-auto space-y-8 bg-muted dark:bg-card rounded-card justify-start overflow-y-auto">
           <div className={"flex flex-col gap-2"}>
             <div className="flex items-start justify-between">
-            <div className="ps-4 md:ps-8 pt-4 md:pt-8">
+            <div className="ps-4 md:ps-6 pt-4 md:pt-6">
                 <div className="space-y-2">
                   <h2 className="text-lg md:text-4xl font-bold text-foreground">
                     {activeTab}
@@ -166,10 +166,10 @@ export default function AboutSection() {
                 })}
               </div>
             </div>
-            <div className="mx-4 md:mx-8 h-1 bg-accent rounded-full"></div>
+            <div className="mx-4 md:mx-6 h-1 bg-accent rounded-full"></div>
           </div>
 
-          <div className="px-4 md:px-8 pb-4 md:pb-8">
+          <div className="px-4 md:px-6 pb-4 md:pb-6">
             {aboutTabs.find((tab) => tab.label === activeTab)?.children}
           </div>
         </div>

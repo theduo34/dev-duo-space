@@ -26,7 +26,7 @@ export default function CtaButton (
 )  {
   return(
     <Button
-      className={cn(" h-11 transition-transform ease-in-out duration-300 hover:scale-105", className)}
+      className={cn(" h-9 transition-transform ease-in-out duration-300 hover:scale-105", className)}
       onClick={onClick && onClick}
       type={type}
       disabled={disabled}
