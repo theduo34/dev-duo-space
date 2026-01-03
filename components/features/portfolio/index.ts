@@ -45,7 +45,7 @@ export const myPortfolio: ProjectInterface[] = [
     description:
       "A scalable e-commerce backend server responsible for managing products, carts, orders, and payment processing.",
     image: STORE_FRONT_IMAGE,
-    technologies: ["Java", "Spring Boot", "Stripe", "MySQL", "Render", "Postman"],
+    technologies: ["Java", "Spring Boot", "Stripe", "MySQL", "Railway", "Postman", "Flyway"],
     githubUrl: "https://github.com/theduo34/store-front-api.git",
   },
   {
@@ -56,6 +56,6 @@ export const myPortfolio: ProjectInterface[] = [
       "A secure investment platform for property and asset management featuring real-time transaction tracking, dividend analytics, and role-based access control for investors, administrators, and super administrators.",
     image: KIP_IMAGE,
     technologies: ["Vue.js", "Laravel", "Inertia SSR", "Tailwind CSS", "PostgreSQL"],
-    githubUrl: "https://github.com/Kornel-Growth-Agency/KIP.git",
+    // githubUrl: "https://github.com/Kornel-Growth-Agency/KIP.git",
   },
 ];

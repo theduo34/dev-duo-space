@@ -40,7 +40,7 @@ const aboutTabs: { label: About, children: React.ReactNode, href: string}[] = [
 
 const addresses: {label: string, value: string, icon: LucideIcon }[] = [
   {label: "Email", value: MY_MAIL, icon: Mail,},
-  {label: "Phone", value: "+233558267973", icon: PhoneIcon },
+  {label: "Phone", value: "+233********73", icon: PhoneIcon },
   {label: "Location", value: "Accra,Ghana", icon: MapPin}
 ]
 

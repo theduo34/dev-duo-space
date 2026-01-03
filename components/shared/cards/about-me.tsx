@@ -15,6 +15,8 @@ const skillIcons = [
   { name: "Next.js", icon: "logos:nextjs-icon" },
   { name: "Laravel", icon: "logos:laravel" },
   { name: "Git", icon: "logos:git-icon" },
+  { name: "Flyway", icon: "simple-icons:flyway" },
+  { name: "Inertia.js", icon: "simple-icons:inertia" },
   { name: "TypeScript", icon: "logos:typescript-icon" },
   { name: "MongoDB", icon: "logos:mongodb-icon" },
   { name: "Figma", icon: "logos:figma" },
@@ -60,8 +62,8 @@ export default function AboutMe() {
         <div className="text-left">
           <h3 className="text-2xl font-bold mb-2">Skillset</h3>
           <p>
-            The tools and technologies I use to design, build, and ship modern web and
-            mobile applications.
+            The tools and technologies I use to design, build, and ship modern web,
+            mobile applications, and scalable apis.
           </p>
         </div>
 
