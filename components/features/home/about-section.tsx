@@ -81,7 +81,7 @@ export default function AboutSection() {
     <section id="about" className="p-4 md:p-8 min-h-screen">
       <div className="flex flex-col md:flex-row w-full gap-8 min-h-screen md:h-screen">
         {/*Profile section*/}
-        <div className="w-full md:w-1/5 flex flex-col justify-start p-4 md:p-6  bg-muted dark:bg-card rounded-card">
+        <div className="w-full md:w-1/5 flex flex-col justify-start p-2 md:p-6  bg-muted dark:bg-card rounded-card">
           <div className={"flex flex-col gap-2"}>
             <Image
               src={PROFILE_URL}
@@ -103,19 +103,19 @@ export default function AboutSection() {
             {addresses.map((address) => {
               const IconComponent = address.icon;
               return (
-                <div key={address.label} className="flex items-start justify-start gap-2 md:gap-4 text-sm">
+                <div key={address.label} className="flex items-start justify-start gap-4 text-sm overflow-hidden">
                   <div className={"p-1.5 md:p-3 rounded-card"}>
                     <IconComponent className="h-5 w-5 text-secondary"/>
                   </div>
                   <div className={"flex flex-col"}>
                     <h3 className={"text-muted-foreground"}>{address.label}</h3>
-                    <p>{address.value}</p>
+                    <p className={"line-clamp-1"}>{address.value}</p>
                   </div>
                 </div>
               )
             })}
 
-            <div  className="flex items-start justify-start gap-2 md:gap-4 text-sm">
+            <div  className="flex items-start justify-start gap-4 text-sm">
               <div className={"p-1.5 md:p-3 rounded-card"}>
                 <Briefcase className="h-5 w-5 text-secondary"/>
               </div>
@@ -127,7 +127,7 @@ export default function AboutSection() {
             </div>
 
             <div className={"flex items-center justify-between"}>
-              <div className={"flex items-center justify-center text-center gap-2 md:gap-4"}>
+              <div className={"flex items-center justify-center text-center gap-4"}>
                 {socialLinks.map(link => {
                   const IconComponent = link.icon;
                   return (
