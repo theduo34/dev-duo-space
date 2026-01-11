@@ -65,10 +65,10 @@ export default function ContactMe() {
       <div className="flex flex-col gap-4 md:gap-8">
 
         <div className="flex flex-col gap-4 md:gap-8">
-          <div className="bg-card border border-border rounded-card p-8">
+          <div className="bg-card border border-border rounded-card p-2 md:p-8">
             <p className="text-muted-foreground leading-relaxed">
               {`I'm always open to discussing new projects, creative ideas, or
-                    opportunities to be part of your vision. Whether you need a fullstack developer or just want to say hi, I'll try my best to get back to you! Feel Free to reach out`}
+                    opportunities to be part of your vision. Whatever you need, I'll try my best to get back to you! Feel Free to reach out`}
             </p>
             <div className="space-y-6 mt-4">
 
