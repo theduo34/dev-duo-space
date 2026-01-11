@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import AboutMe from "@/components/shared/cards/about-me";
 import {Separator} from "@/components/ui/separator";
 import Image from 'next/image';
-import {Download, Github, Instagram, Linkedin, LucideIcon, Mail, MapPin, PhoneIcon} from "lucide-react";
+import {Briefcase, Github, Instagram, Linkedin, LucideIcon, Mail, MapPin, PhoneIcon} from "lucide-react";
 import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, MY_MAIL, PROFILE_URL, RESUME_URL} from "@/lib/costants";
-import CtaButton from "@/components/shared/cta-button";
 import {ToggleTheme} from "@/components/layout/toggle-theme";
 import Portfolio from "@/components/features/portfolio/portfolio";
 import ContactMe from "@/components/features/contact-me/contact-me";
 import Link from "next/link";
+import {Button} from "@/components/ui/button";
 
 type About = "About Me" | "Portfolio" | "Contact Me";
 
@@ -104,9 +104,9 @@ export default function AboutSection() {
               const IconComponent = address.icon;
               return (
                 <div key={address.label} className="flex items-start justify-start gap-2 md:gap-4 text-sm">
-                 <div className={"p-1.5 md:p-3 rounded-card"}>
-                   <IconComponent className="h-5 w-5 text-secondary"/>
-                 </div>
+                  <div className={"p-1.5 md:p-3 rounded-card"}>
+                    <IconComponent className="h-5 w-5 text-secondary"/>
+                  </div>
                   <div className={"flex flex-col"}>
                     <h3 className={"text-muted-foreground"}>{address.label}</h3>
                     <p>{address.value}</p>
@@ -115,20 +115,25 @@ export default function AboutSection() {
               )
             })}
 
-            <CtaButton
-              label={"Visit Resume"}
-              icon
-              iconComponent={<Download/>}
-              onClick={handleViewResume}
-            />
+            <div  className="flex items-start justify-start gap-2 md:gap-4 text-sm">
+              <div className={"p-1.5 md:p-3 rounded-card"}>
+                <Briefcase className="h-5 w-5 text-secondary"/>
+              </div>
+              <div className={"flex flex-col"}>
+                <Button variant={"link"} className={"p-0"} onClick={() => handleViewResume()}>
+                  Visit resume
+                </Button>
+              </div>
+            </div>
+
             <div className={"flex items-center justify-between"}>
               <div className={"flex items-center justify-center text-center gap-2 md:gap-4"}>
                 {socialLinks.map(link => {
                   const IconComponent = link.icon;
-                  return(
-                   <Link key={link.label} href={link.url} target="_blank">
-                     <IconComponent className="h-5 w-5"/>
-                   </Link>
+                  return (
+                    <Link key={link.label} href={link.url} target="_blank">
+                      <IconComponent className="h-5 w-5"/>
+                    </Link>
                   )
                 })}
               </div>
@@ -138,12 +143,13 @@ export default function AboutSection() {
         </div>
 
         {/*About and other info section*/}
-        <div className="w-full md:w-4/5 mx-auto space-y-8 bg-muted dark:bg-card rounded-card justify-start overflow-y-auto">
+        <div
+          className="w-full md:w-4/5 mx-auto space-y-8 bg-muted dark:bg-card rounded-card justify-start overflow-y-auto">
           <div className={"flex flex-col gap-2"}>
             <div className="flex items-start justify-between">
-            <div className="ps-4 md:ps-6 pt-4 md:pt-6">
+              <div className="ps-2 md:ps-6 pt-4 md:pt-6">
                 <div className="space-y-2">
-                  <h2 className="text-lg md:text-4xl font-bold text-foreground">
+                  <h2 className="text-sm md:text-4xl font-bold text-foreground">
                     {activeTab}
                   </h2>
                 </div>
@@ -156,7 +162,7 @@ export default function AboutSection() {
                     <Link href={tab.href} key={tab.label}>
                       <div
                         onClick={() => handleTabChange(tab.label)}
-                        className={`px-2 md:px-4 py-1 cursor-pointer font-medium capitalize transition-all duration-300 ${active ? "text-accent shadow-md" : "text-muted-foreground hover:text-foreground"
+                        className={`px-2 md:px-4 py-1 text-sm md:text-base cursor-pointer font-medium capitalize transition-all duration-300 ${active ? "text-accent shadow-md" : "text-muted-foreground hover:text-foreground"
                         }`}
                       >
                         {tab.label}
@@ -166,10 +172,10 @@ export default function AboutSection() {
                 })}
               </div>
             </div>
-            <div className="mx-4 md:mx-6 h-1 bg-accent rounded-full"></div>
+            <div className="mx-2 md:mx-6 h-1 bg-accent rounded-full"></div>
           </div>
 
-          <div className="px-4 md:px-6 pb-4 md:pb-6">
+          <div className="px-2 md:px-6 pb-4 md:pb-6">
             {aboutTabs.find((tab) => tab.label === activeTab)?.children}
           </div>
         </div>
