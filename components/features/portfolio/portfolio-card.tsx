@@ -7,20 +7,20 @@ import {ProjectInterface} from "@/components/features/portfolio/index";
 
 const PortfolioCard = ({project}:{project: ProjectInterface}) => {
   return (
-    <div className="flex bg-muted rounded-card p-4 shadow-lg">
-      <div className="w-2/5">
+    <div className="flex flex-col gap-2 md:flex-row bg-muted rounded-card shadow-lg">
+      <div className="w-full md:w-2/5 p-0 md:p-4">
         <div className="relative group overflow-hidden rounded-lg border border-border hover:border-primary/50 transition-all duration-300 h-40">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover rounded-tr-2xl md:rounded-none transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
         </div>
       </div>
 
-      <div className="w-3/5 space-y-2 pl-4">
+      <div className="w-full md:w-3/5 space-y-2 md:pl-4 p-2">
         <h3 className="text-xl md:text-2xl font-bold text-foreground">
           {project.title}
         </h3>
