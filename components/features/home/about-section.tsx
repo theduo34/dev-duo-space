@@ -175,7 +175,7 @@ export default function AboutSection() {
             <div className="mx-2 md:mx-6 h-1 bg-accent rounded-full"></div>
           </div>
 
-          <div className="px-2 md:px-6 pb-4 md:pb-6">
+          <div className="px-2 md:px-6 pb-2 md:pb-6">
             {aboutTabs.find((tab) => tab.label === activeTab)?.children}
           </div>
         </div>

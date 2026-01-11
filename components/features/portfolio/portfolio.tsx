@@ -15,7 +15,7 @@ const Portfolio = () => {
   );
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4 md:gap-8">
       {Object.entries(groupedProjects).map(([type, projects]) => (
         <div key={type} className="flex flex-col">
           <h4 className="text-accent text-lg">{type}</h4>
