@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import AboutMe from "@/components/shared/cards/about-me";
 import {Separator} from "@/components/ui/separator";
 import Image from 'next/image';
-import {Briefcase, Github, Instagram, Linkedin, LucideIcon, Mail, MapPin} from "lucide-react";
+import {Briefcase, EllipsisVertical, Github, Instagram, Linkedin, LucideIcon, Mail, MapPin} from "lucide-react";
 import {XIcon} from "@/components/shared/icons/x-icon";
 import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, MY_MAIL, PROFILE_URL, RESUME_URL, X_URL} from "@/lib/constants";
 import {ToggleTheme} from "@/components/layout/toggle-theme";
@@ -13,6 +13,7 @@ import Experience from "@/components/features/experience/experience";
 import ContactMe from "@/components/features/contact-me/contact-me";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger} from "@/components/ui/dropdown-menu";
 
 type About = "About Me" | "Portfolio" | "Experience" | "Contact Me";
 
@@ -89,7 +90,7 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="p-4 md:p-8 min-h-screen">
+    <section id="about" className="p-4 md:p-8 min-h-screen overflow-x-hidden">
       <div className="flex flex-col md:flex-row w-full gap-8 min-h-screen md:h-screen">
         {/*Profile section*/}
         <div className="w-full md:w-1/5 flex flex-col justify-start p-2 md:p-6  bg-muted dark:bg-card rounded-card">
@@ -154,26 +155,51 @@ export default function AboutSection() {
         </div>
 
         {/*About and other info section*/}
-        <div
-          className="w-full md:w-4/5 mx-auto space-y-8 bg-muted dark:bg-card rounded-card justify-start overflow-y-auto">
+        <div className="w-full md:w-4/5 mx-auto space-y-8 bg-muted dark:bg-card rounded-card justify-start overflow-y-auto overflow-x-hidden">
           <div className={"flex flex-col gap-2"}>
-            <div className="flex items-start justify-between">
-              <div className="ps-2 md:ps-6 pt-4 md:pt-6">
+            <div className="flex items-center justify-between gap-2">
+              <div className="ps-2 md:ps-6 pt-4 md:pt-6 min-w-0">
                 <div className="space-y-2">
-                  <h2 className="text-sm md:text-4xl font-bold text-foreground">
+                  <h2 className="text-xl md:text-4xl font-bold text-foreground truncate">
                     {activeTab}
                   </h2>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 p-1.5 dark:bg-muted bg-primary/20 border rounded-card">
+              {/* Mobile: three-dot menu to switch tabs without overflowing */}
+              <div className="md:hidden pe-2 shrink-0">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" size="icon" className="rounded-card" aria-label="Switch tab">
+                      <EllipsisVertical className="h-5 w-5"/>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    {aboutTabs.map((tab) => {
+                      const active = activeTab === tab.label;
+                      return (
+                        <DropdownMenuItem
+                          key={tab.label}
+                          onClick={() => handleTabChange(tab.label)}
+                          className={active ? "text-accent" : ""}
+                        >
+                          {tab.label}
+                        </DropdownMenuItem>
+                      )
+                    })}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
+
+              {/* Desktop: full tab bar */}
+              <div className="hidden md:flex items-center gap-2 p-1.5 dark:bg-muted bg-primary/20 border rounded-card">
                 {aboutTabs.map((tab) => {
                   const active = activeTab === tab.label;
                   return (
                     <Link href={tab.href} key={tab.label}>
                       <div
                         onClick={() => handleTabChange(tab.label)}
-                        className={`px-2 md:px-4 py-1 text-sm md:text-base cursor-pointer font-medium capitalize transition-all duration-300 ${active ? "text-accent shadow-md" : "text-muted-foreground hover:text-foreground"
+                        className={`px-2 md:px-4 py-1 text-sm md:text-base whitespace-nowrap cursor-pointer font-medium capitalize transition-all duration-300 ${active ? "text-accent shadow-md" : "text-muted-foreground hover:text-foreground"
                         }`}
                       >
                         {tab.label}
@@ -186,7 +212,7 @@ export default function AboutSection() {
             <div className="mx-2 md:mx-6 h-1 bg-accent rounded-full"></div>
           </div>
 
-          <div className="px-2 md:px-6">
+          <div className="px-2 md:px-6 overflow-x-hidden">
             {aboutTabs.find((tab) => tab.label === activeTab)?.children}
           </div>
         </div>

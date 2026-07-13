@@ -22,7 +22,7 @@ const Portfolio = () => {
           <h4 className="text-accent text-lg">{type}</h4>
           <div className="h-0.5 bg-muted-foreground rounded-full my-1"/>
 
-          <div className="flex flex-col gap-4 py-4">
+          <div className="flex flex-col gap-8 py-4">
             {projects.map((project) => (
               <PortfolioCard key={project.id} project={project}/>
             ))}

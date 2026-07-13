@@ -42,7 +42,7 @@ const PortfolioCard = ({project}:{project: ProjectInterface}) => {
       </div>
 
       <div className="w-full md:w-3/5 space-y-2 md:pl-4 p-2">
-        <h3 className="text-xl md:text-2xl font-bold text-foreground">
+        <h3 className="text-lg md:text-2xl font-bold text-foreground">
           {project.title}
         </h3>
 

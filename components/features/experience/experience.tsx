@@ -94,7 +94,7 @@ export default function Experience() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="text-xl font-bold text-foreground">
+                    <h3 className="text-lg md:text-xl font-bold text-foreground">
                       {exp.role}
                     </h3>
                     <span className="px-2 py-0.5 text-xs rounded-full bg-secondary/50 text-secondary-foreground border border-secondary/20">
@@ -102,7 +102,7 @@ export default function Experience() {
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mt-1">
-                    <p className="text-lg font-semibold text-primary">
+                    <p className="text-base md:text-lg font-semibold text-primary">
                       {exp.company}
                     </p>
                     {exp.companyUrl && (

@@ -60,7 +60,7 @@ export default function AboutMe() {
       {/* Skillset Section */}
       <div className="space-y-4">
         <div className="text-left">
-          <h3 className="text-2xl font-bold mb-2">Skillset</h3>
+          <h3 className="text-lg md:text-2xl font-bold mb-2">Skillset</h3>
           <p>
             Technologies I've built with.
           </p>

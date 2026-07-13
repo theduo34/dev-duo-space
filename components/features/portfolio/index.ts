@@ -71,22 +71,22 @@ export const myPortfolio: ProjectInterface[] = [
 export const otherWebsites: OtherWebsite[] = [
   {
     title: "Xolace Web App",
-    description: "The web counterpart to the mobile app: a socio-hybrid mental health platform combining anonymous peer support with professional guidance.",
+    description: "The web version of the Xolace app.",
     url: "https://www.xolace.app/",
   },
   {
     title: "Heaven's Dew Montessori School",
-    description: "A school site for a private Montessori institution in Koforidua, covering academics, arts, and boarding admissions.",
+    description: "A school website for a Montessori institution in Koforidua.",
     url: "https://hdm.edu.gh/",
   },
   {
     title: "AIMS Achievers Network",
-    description: "A secure voting and awards platform for campus recognition events across Ghana, with real-time result tracking.",
+    description: "A voting and awards platform for campus events in Ghana.",
     url: "https://aimsachieversnetwork.com/",
   },
   {
     title: "Smak Photography",
-    description: "A site for Smak Studios showcasing their photography work, services, and pricing, with booking and enquiry options.",
+    description: "A photography studio site with portfolio, pricing, and booking.",
     url: "https://smak-photography.com/",
   },
 ];
