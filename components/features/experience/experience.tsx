@@ -19,50 +19,62 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
+    company: "Xolace",
+    role: "Co-Founder & Technical Lead",
+    type: "Co-Founder",
+    location: "In-Person & Remote, Ghana",
+    period: "May 2025 – Present",
+    responsibilities: [
+      "Co-founded Xolace and lead technical direction across the web and mobile products",
+      "Built the core web and mobile experience from scratch, including the emotional-reflection and peer-support features",
+      "Set up the backend, authentication, and safety systems"
+    ],
+    technologies: ["Next.js", "React Native", "Expo", "Supabase", "Convex", "Docker"],
+    companyUrl: "https://xolaceinc.com"
+  },
+  {
+    id: 2,
     company: "Doltech Ltd",
     role: "Frontend Developer",
     type: "Contract",
     location: "Ghana (Remote)",
     period: "Feb 2025 – May 2025",
     responsibilities: [
-      "Designed and implemented the user interface for a cashless toll system, enhancing efficiency with AI-powered solutions",
-      "Developed dynamic dashboards for drivers, toll operators, and government officials, improving data accessibility",
-      "Engineered KYC applications, secure payment pages, and an operator management system to streamline processes",
-      "Conducted rigorous testing and debugging, ensuring cross-browser compatibility and seamless user experiences"
+      "Designed and implemented the user interface for a cashless toll system",
+      "Built dashboards for drivers, toll operators, and government officials",
+      "Engineered KYC applications, secure payment pages, and an operator management system"
     ],
     technologies: ["React", "TypeScript", "Tailwind CSS", "REST APIs", "AI Integration"]
   },
   {
-    id: 2,
+    id: 3,
     company: "Kornel Growth Agency",
     role: "Frontend Developer",
     type: "Contract",
     location: "Remote, Ghana",
     period: "Jan 2024 – Mar 2025",
     responsibilities: [
-      "Built a secure investment platform for property and asset management, improving financial tracking for users",
-      "Designed and implemented investor dashboards with real-time transaction tracking and dividend analytics",
-      "Developed role-based access control, ensuring secure authentication for investors, admins, and super admins",
-      "Optimized frontend performance by implementing lazy loading and efficient state management strategies"
+      "Built a secure investment platform for property and asset management",
+      "Added investor dashboards with real-time transaction tracking and dividend analytics",
+      "Set up role-based access for investors, admins, and super admins, keeping the platform secure"
     ],
-    technologies: ["React", "Redux RTK Query", "TypeScript", "Tailwind CSS", "Security"],
-    companyUrl: "https://kornelgrowth.com"
+    technologies: ["Vue.js", "Laravel", "PrimeFlex", "TypeScript", "Security"],
+    // companyUrl: "https://kornelgrowth.com"
   },
   {
-    id: 3,
+    id: 4,
     company: "Goodwill Systems",
     role: "Frontend Developer",
     type: "Full-Stack Focus",
     location: "Remote, USA",
     period: "Jan 2024 – Dec 2024",
     responsibilities: [
-      "Implemented SEO optimization techniques, increasing search engine rankings and user engagement",
-      "Designed and developed key platform features, including user profiles, business dashboards, and revenue analytics",
-      "Developed and optimized Redux RTK Query endpoints to efficiently manage API calls and application state",
-      "Implemented stateful UI components that dynamically update based on API responses, improving user experience"
+      "Built key platform features on the frontend, including user profiles, business dashboards, and revenue analytics",
+      "Built and documented REST APIs with Django and Swagger for the platform's backend",
+      "Added Redis caching to keep dashboards fast as usage grew"
     ],
-    technologies: ["React", "Redux", "TypeScript", "Node.js", "SEO"],
-    companyUrl: "https://goodwillsystems.com"
+    technologies: ["React", "Redux RTK Query", "Python", "Django", "Redis", "TypeScript", "REST API", "Swagger"],
+    // companyUrl: "https://goodwillsystems.com"
   }
 ];
 

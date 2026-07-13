@@ -97,9 +97,9 @@ export default function AboutSection() {
             <Image
               src={PROFILE_URL}
               alt={"profile image"}
-              height={400}
+              height={200}
               width={300}
-              className="w-full aspect-[3/4] object-cover object-top rounded-card"
+              className="w-full aspect-[5/6] object-cover object-top rounded-card"
             />
             <h1 className="text-center text-xl font-bold  leading-tight">
               Emmanuel Somuah

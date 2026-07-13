@@ -1,4 +1,4 @@
-import {KTU_SRC_IMAGE, STORE_FRONT_IMAGE, XOLACE_MOBILE_IMAGE, XOLACE_WEB_IMAGE} from "@/lib/constants";
+import {KTU_SRC_IMAGE, STORE_FRONT_IMAGE, XOLACE_MOBILE_IMAGE} from "@/lib/constants";
 
 export type ProjectType =
   | "Fullstack Web Applications"
@@ -26,22 +26,11 @@ export interface OtherWebsite {
 
 export const myPortfolio: ProjectInterface[] = [
   {
-    id: "xolace-web-app",
-    title: "Xolace Web Application",
-    type: "Fullstack Web Applications",
-    description:
-      "Xolace is a socio-hybrid digital mental health platform available on both web and mobile. It supports individuals navigating emotional and mental health challenges by combining social connection with professional guidance.",
-    image: XOLACE_WEB_IMAGE,
-    technologies: ["Next.js", "Tailwind CSS", "Supabase", "Docker", "ElevenLabs"],
-    githubUrl: "https://github.com/inside-aims/xolace.git",
-    liveUrl: "https://xolace.app",
-  },
-  {
     id: "xolace-mobile-app",
     title: "Xolace App",
     type: "Mobile Applications",
     description:
-      "Xolace's mobile app is end-to-end emotional processing infrastructure — a private space to name feelings you can't quite put into words, then get pointed toward real help instead of a chatbot or a social feed. It pairs anonymized peer reflections with built-in crisis-detection safety redirects, so support feels human without ever being performative.",
+      "Xolace's mobile app is end-to-end emotional processing infrastructure: a private space to name feelings you can't quite put into words, then get pointed toward real help instead of a chatbot or a social feed. It pairs anonymized peer reflections with built-in crisis-detection safety redirects, so support feels human without ever being performative.",
     image: XOLACE_MOBILE_IMAGE,
     technologies: ["React Native", "Expo", "Convex", "Tailwind CSS"],
     appStoreUrl: "https://apps.apple.com/gh/app/xolace/id6761601429",
@@ -55,8 +44,8 @@ export const myPortfolio: ProjectInterface[] = [
       "A mobile application built for the Koforidua Technical University SRC to improve student engagement and access to campus information.",
     image: KTU_SRC_IMAGE,
     technologies: ["React Native", "Expo", "Supabase", "Tailwind CSS"],
-    githubUrl: "https://github.com/KTU-SRC-Org/ktu_src_app.git",
-    liveUrl: "https://play.google.com",
+    appStoreUrl: "https://apps.apple.com/gh/app/ktu-src/id6759487105",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.xolaceincorg.KtuSrcAppOfficial&pcampaignid=web_share",
   },
   {
     id: "storefront-api-server",
@@ -79,26 +68,25 @@ export const myPortfolio: ProjectInterface[] = [
   // },
 ];
 
-// TODO: replace with real sites — dummy placeholders so the layout can be previewed
 export const otherWebsites: OtherWebsite[] = [
   {
-    title: "Placeholder Business Site",
-    description: "A marketing site built for a local business client.",
-    url: "https://example.com",
+    title: "Xolace Web App",
+    description: "The web counterpart to the mobile app: a socio-hybrid mental health platform combining anonymous peer support with professional guidance.",
+    url: "https://www.xolace.app/",
   },
   {
-    title: "Placeholder Restaurant Site",
-    description: "A menu and reservations site for a restaurant client.",
-    url: "https://example.com",
+    title: "Heaven's Dew Montessori School",
+    description: "A school site for a private Montessori institution in Koforidua, covering academics, arts, and boarding admissions.",
+    url: "https://hdm.edu.gh/",
   },
   {
-    title: "Placeholder Agency Site",
-    description: "A small marketing site built for a design agency.",
-    url: "https://example.com",
+    title: "AIMS Achievers Network",
+    description: "A secure voting and awards platform for campus recognition events across Ghana, with real-time result tracking.",
+    url: "https://aimsachieversnetwork.com/",
   },
   {
-    title: "Placeholder Personal Brand Site",
-    description: "A simple portfolio/blog built for a client's personal brand.",
-    url: "https://example.com",
+    title: "Smak Photography",
+    description: "A site for Smak Studios showcasing their photography work, services, and pricing, with booking and enquiry options.",
+    url: "https://smak-photography.com/",
   },
 ];
