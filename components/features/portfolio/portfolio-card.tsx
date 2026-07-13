@@ -2,21 +2,42 @@
 
 import Image from "next/image";
 import StackCard from "@/components/shared/cards/stack-card";
-import {ExternalLink, Github} from "lucide-react";
+import {ExternalLink, Github, ImageOff, Smartphone} from "lucide-react";
 import {ProjectInterface} from "@/components/features/portfolio/index";
+import {useEffect, useState} from "react";
+
+const getInitialStoreUrl = (project: ProjectInterface) =>
+  project.playStoreUrl ?? project.appStoreUrl;
 
 const PortfolioCard = ({project}:{project: ProjectInterface}) => {
+  const [storeUrl, setStoreUrl] = useState(() => getInitialStoreUrl(project));
+
+  useEffect(() => {
+    if (project.appStoreUrl && project.playStoreUrl && /iPad|iPhone|iPod/.test(navigator.userAgent)) {
+      setStoreUrl(project.appStoreUrl);
+    }
+  }, [project]);
+
   return (
     <div className="flex flex-col gap-2 md:flex-row bg-muted rounded-card shadow-lg">
       <div className="w-full md:w-2/5 p-0 md:p-4 ">
         <div className="relative group p-0 overflow-hidden rounded-tr-2xl md:rounded-none border border-border hover:border-primary/50 transition-all duration-300 h-40">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+          {project.image ? (
+            <>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+            </>
+          ) : (
+            <div className="h-full w-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-primary/10 to-secondary/10">
+              <ImageOff className="h-6 w-6 text-muted-foreground"/>
+              <span className="text-xs text-muted-foreground">Screenshot coming soon</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -64,7 +85,18 @@ const PortfolioCard = ({project}:{project: ProjectInterface}) => {
             </a>
           )}
 
-          {!project.githubUrl && !project.liveUrl && (
+          {storeUrl && (
+            <a
+              href={storeUrl}
+              target="_blank"
+              className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-sm rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 font-medium group"
+            >
+              <Smartphone className="w-4 h-4 group-hover:scale-110 transition-transform"/>
+              Get the App
+            </a>
+          )}
+
+          {!project.githubUrl && !project.liveUrl && !storeUrl && (
             <div className="px-3 py-1.5 rounded-lg bg-muted text-muted-foreground text-xs font-medium">
               Private Project
             </div>

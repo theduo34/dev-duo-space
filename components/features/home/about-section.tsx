@@ -4,18 +4,20 @@ import React, { useState } from "react";
 import AboutMe from "@/components/shared/cards/about-me";
 import {Separator} from "@/components/ui/separator";
 import Image from 'next/image';
-import {Briefcase, Github, Instagram, Linkedin, LucideIcon, Mail, MapPin, PhoneIcon} from "lucide-react";
-import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, MY_MAIL, PROFILE_URL, RESUME_URL} from "@/lib/costants";
+import {Briefcase, Github, Instagram, Linkedin, LucideIcon, Mail, MapPin} from "lucide-react";
+import {XIcon} from "@/components/shared/icons/x-icon";
+import {GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, MY_MAIL, PROFILE_URL, RESUME_URL, X_URL} from "@/lib/constants";
 import {ToggleTheme} from "@/components/layout/toggle-theme";
 import Portfolio from "@/components/features/portfolio/portfolio";
+import Experience from "@/components/features/experience/experience";
 import ContactMe from "@/components/features/contact-me/contact-me";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 
-type About = "About Me" | "Portfolio" | "Contact Me";
+type About = "About Me" | "Portfolio" | "Experience" | "Contact Me";
 
 interface SocialLink {
-  icon: LucideIcon;
+  icon: LucideIcon | typeof XIcon;
   label: string;
   url: string;
 }
@@ -32,6 +34,11 @@ const aboutTabs: { label: About, children: React.ReactNode, href: string}[] = [
     href: "#portfolio"
   },
   {
+    label: "Experience",
+    children: <Experience/>,
+    href: "#experience"
+  },
+  {
     label: "Contact Me",
     children: <ContactMe/>,
     href: "#contact"
@@ -40,7 +47,6 @@ const aboutTabs: { label: About, children: React.ReactNode, href: string}[] = [
 
 const addresses: {label: string, value: string, icon: LucideIcon }[] = [
   {label: "Email", value: MY_MAIL, icon: Mail,},
-  {label: "Phone", value: "+233********73", icon: PhoneIcon },
   {label: "Location", value: "Accra,Ghana", icon: MapPin}
 ]
 
@@ -59,6 +65,11 @@ const socialLinks: SocialLink[] = [
     icon: Instagram,
     label: "Instagram",
     url: INSTAGRAM_URL,
+  },
+  {
+    icon: XIcon,
+    label: "X",
+    url: X_URL,
   }
 ];
 
@@ -86,9 +97,9 @@ export default function AboutSection() {
             <Image
               src={PROFILE_URL}
               alt={"profile image"}
-              height={200}
-              width={200}
-              className="w-full object-cover h-40 w-40 rounded-card"
+              height={400}
+              width={300}
+              className="w-full aspect-[3/4] object-cover object-top rounded-card"
             />
             <h1 className="text-center text-xl font-bold  leading-tight">
               Emmanuel Somuah
@@ -105,7 +116,7 @@ export default function AboutSection() {
               return (
                 <div key={address.label} className="flex items-start justify-start gap-4 text-sm overflow-hidden">
                   <div className={"p-1.5 md:p-3 rounded-card"}>
-                    <IconComponent className="h-5 w-5 text-secondary"/>
+                    <IconComponent className="h-5 w-5 text-muted-foreground"/>
                   </div>
                   <div className={"flex flex-col"}>
                     <h3 className={"text-muted-foreground"}>{address.label}</h3>
@@ -117,10 +128,10 @@ export default function AboutSection() {
 
             <div  className="flex items-start justify-start gap-4 text-sm">
               <div className={"p-1.5 md:p-3 rounded-card"}>
-                <Briefcase className="h-5 w-5 text-secondary"/>
+                <Briefcase className="h-5 w-5 text-muted-foreground"/>
               </div>
               <div className={"flex flex-col"}>
-                <Button variant={"link"} className={"p-0"} onClick={() => handleViewResume()}>
+                <Button variant={"link"} className={"p-0 underline"} onClick={() => handleViewResume()}>
                   Visit resume
                 </Button>
               </div>
@@ -175,7 +186,7 @@ export default function AboutSection() {
             <div className="mx-2 md:mx-6 h-1 bg-accent rounded-full"></div>
           </div>
 
-          <div className="px-2 md:px-6 pb-2 md:pb-6">
+          <div className="px-2 md:px-6">
             {aboutTabs.find((tab) => tab.label === activeTab)?.children}
           </div>
         </div>

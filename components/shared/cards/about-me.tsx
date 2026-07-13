@@ -32,28 +32,28 @@ const skillIcons = [
 
 
 export default function AboutMe() {
-  const firstRow = skillIcons.slice(0, 13);
-  const secondRow = skillIcons.slice(13);
+  const firstRow = skillIcons.slice(0, 9);
+  const secondRow = skillIcons.slice(9, 17);
+  const thirdRow = skillIcons.slice(17);
 
   return (
     <div className="space-y-10 animate-in fade-in duration-500">
       {/* Professional Summary */}
       <div className="space-y-4 text-left">
         <p className="leading-relaxed">
-          I’m a <span className="font-mono">Frontend-Heavy Fullstack Developer</span> specializing in building modern, high-performance web applications with
-          <span className="font-medium"> React and Next.js</span>, and cross-platform
-          mobile applications using <span className="font-medium">React Native (Expo)</span>.
-          I’m passionate about crafting intuitive user interfaces that are scalable,
-          accessible, and performance-driven.
+          I'm a <span className="font-mono">Frontend-Heavy Fullstack Developer</span>. On the web I
+          build with <span className="font-medium">React, Next.js, and Vue.js</span>, and on mobile with
+          <span className="font-medium"> React Native and Expo</span>. On the backend I'm comfortable in
+          Node.js and Java with Spring Boot, so I don't need someone else to wire up an API when a
+          project calls for it. I also build simulations when that's what the problem actually needs.
         </p>
 
         <p className="leading-relaxed">
-          I have experience developing dashboards, fintech platforms, investment systems, and health-focused applications, translating complex business requirements into clean, maintainable, and user-friendly interfaces. I work closely with designers, backend engineers, and product teams to ensure seamless user experiences across web and mobile platforms.
-        </p>
-
-        <p className="leading-relaxed">
-          While my strength lies in frontend engineering, I’m comfortable integrating
-          APIs, managing application state, and collaborating across the stack to deliver complete, production-ready solutions that solve real-world problems.
+          What I actually care about is whether an interface makes sense to the person using it: the
+          loading states, the error messages, the difference between a form that feels safe to fill out
+          and one that doesn't. I'm just as comfortable being the only developer on a project as one of
+          several, picking up whatever stack is already there. The specifics of what I've built are in
+          Portfolio and Experience; this is just how I build.
         </p>
       </div>
 
@@ -62,8 +62,7 @@ export default function AboutMe() {
         <div className="text-left">
           <h3 className="text-2xl font-bold mb-2">Skillset</h3>
           <p>
-            The tools and technologies I use to design, build, and ship modern web,
-            mobile applications, and scalable apis.
+            Technologies I've built with.
           </p>
         </div>
 
@@ -73,8 +72,8 @@ export default function AboutMe() {
               <div key={skill.name} className="mx-2 md:mx-6">
                 <Icon
                   icon={skill.icon}
-                  width={48}
-                  height={48}
+                  width={64}
+                  height={64}
                 />
               </div>
             ))}
@@ -85,8 +84,20 @@ export default function AboutMe() {
               <div key={skill.name} className="mx-2 md:mx-6">
                 <Icon
                   icon={skill.icon}
-                  width={40}
-                  height={40}
+                  width={52}
+                  height={52}
+                />
+              </div>
+            ))}
+          </Marquee>
+
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {thirdRow.map((skill) => (
+              <div key={skill.name} className="mx-2 md:mx-6">
+                <Icon
+                  icon={skill.icon}
+                  width={64}
+                  height={64}
                 />
               </div>
             ))}
