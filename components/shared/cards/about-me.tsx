@@ -4,10 +4,8 @@ import { Icon } from "@iconify/react";
 
 const skillIcons = [
   { name: "React", icon: "logos:react" },
-  { name: "Docker", icon: "logos:docker-icon" },
   { name: "Redux", icon: "logos:redux" },
   { name: "Supabase", icon: "logos:supabase-icon" },
-  { name: "Redis", icon: "logos:redis" },
   { name: "Node.js", icon: "logos:nodejs-icon" },
   { name: "MySQL", icon: "logos:mysql" },
   { name: "Stripe", icon: "logos:stripe" },
@@ -41,19 +39,19 @@ export default function AboutMe() {
       {/* Professional Summary */}
       <div className="space-y-4 text-left">
         <p className="leading-relaxed">
-          I'm a <span className="font-mono">Frontend-Heavy Fullstack Developer</span>. On the web I
+          {`I'm a`} <span className="font-mono">Frontend-Heavy Fullstack Developer</span>. On the web I
           build with <span className="font-medium">React, Next.js, and Vue.js</span>, and on mobile with
-          <span className="font-medium"> React Native and Expo</span>. On the backend I'm comfortable in
+          <span className="font-medium"> React Native and Expo</span>.{`On the backend I'm comfortable in
           Node.js and Java with Spring Boot, so I don't need someone else to wire up an API when a
-          project calls for it. I also build simulations when that's what the problem actually needs.
+          project calls for it. I also build simulations when that's what the problem actually needs.`}
         </p>
 
         <p className="leading-relaxed">
-          What I actually care about is whether an interface makes sense to the person using it: the
-          loading states, the error messages, the difference between a form that feels safe to fill out
-          and one that doesn't. I'm just as comfortable being the only developer on a project as one of
-          several, picking up whatever stack is already there. The specifics of what I've built are in
-          Portfolio and Experience; this is just how I build.
+          {`What I actually care about is whether an interface makes sense to the person using it: the
+            loading states, the error messages, the difference between a form that feels safe to fill out
+            and one that doesn't. I'm just as comfortable being the only developer on a project as one of
+            several, picking up whatever stack is already there. The specifics of what I've built are in
+            Portfolio and Experience; this is just how I build.`}
         </p>
       </div>
 
@@ -62,7 +60,7 @@ export default function AboutMe() {
         <div className="text-left">
           <h3 className="text-lg md:text-2xl font-bold mb-2">Skillset</h3>
           <p>
-            Technologies I've built with.
+            {`Technologies I've built with.`}
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-export const RESUME_URL = "https://drive.google.com/file/d/1Arj9AjgCzeBbz_wq_Ir-FhENrq8xE2tr/view?usp=sharing";
+export const RESUME_URL = "https://drive.google.com/file/d/1h68jlHCXyHxSwzCfpxjRF9U1J5ccl4SH/view?usp=sharing";
 
 export const PROFILE_URL = "https://res.cloudinary.com/dnucdwa71/image/upload/c_fill,w_800,q_80,f_auto,e_sharpen:150/v1767437823/IMG_3547_nl5tm4.jpg"
 
@@ -6,9 +6,9 @@ export const GITHUB_URL = "https://github.com/theduo34"
 
 export const LINKEDIN_URL = "https://www.linkedin.com/in/somuah-emmanuel-66111a1b9"
 
-export const INSTAGRAM_URL = "https://www.instagram.com/heyaquasi/"
+export const INSTAGRAM_URL = "https://www.instagram.com/esomuah___/"
 
-export const X_URL = "https://x.com/heyaquasi"
+export const X_URL = "https://x.com/esomuah___"
 
 export const MY_MAIL = "emmsom506@gmail.com"
 
